@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CSVKit"
-  s.version      = "0.2.2"
+  s.version      = "0.3.0"
   s.summary      = "A simple CSV parser written in Swift."
 
   s.description  = <<-DESC
