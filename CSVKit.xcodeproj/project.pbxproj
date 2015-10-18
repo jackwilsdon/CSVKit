@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		04093D4E1BD30CA40084A10D /* CSVKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04093D4D1BD30CA40084A10D /* CSVKitTests.swift */; };
 		04093D501BD30CA40084A10D /* CSVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049733861BD3032900A492E7 /* CSVKit.framework */; settings = {ASSET_TAGS = (); }; };
-		04093D571BD30D4B0084A10D /* CSVColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04093D561BD30D4B0084A10D /* CSVColumn.swift */; settings = {ASSET_TAGS = (); }; };
 		04093D591BD30EA20084A10D /* CSVValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04093D581BD30EA20084A10D /* CSVValue.swift */; settings = {ASSET_TAGS = (); }; };
 		0497338A1BD3032900A492E7 /* CSVKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 049733891BD3032900A492E7 /* CSVKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		049733921BD304C300A492E7 /* CSVKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733911BD304C300A492E7 /* CSVKit.swift */; settings = {ASSET_TAGS = (); }; };
 		049733941BD304C900A492E7 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733931BD304C900A492E7 /* CSV.swift */; settings = {ASSET_TAGS = (); }; };
 		049733961BD3050700A492E7 /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733951BD3050700A492E7 /* CSVRow.swift */; settings = {ASSET_TAGS = (); }; };
+		04FD2DE81BD412580033299C /* CSVRowObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2DE71BD412580033299C /* CSVRowObject.swift */; settings = {ASSET_TAGS = (); }; };
+		04FD2DEE1BD415F20033299C /* CSVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2DED1BD415F20033299C /* CSVSet.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,6 @@
 		04093D4B1BD30CA40084A10D /* CSVKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSVKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04093D4D1BD30CA40084A10D /* CSVKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVKitTests.swift; sourceTree = "<group>"; };
 		04093D4F1BD30CA40084A10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04093D561BD30D4B0084A10D /* CSVColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVColumn.swift; sourceTree = "<group>"; };
 		04093D581BD30EA20084A10D /* CSVValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVValue.swift; sourceTree = "<group>"; };
 		049733861BD3032900A492E7 /* CSVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		049733891BD3032900A492E7 /* CSVKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVKit.h; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		049733911BD304C300A492E7 /* CSVKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVKit.swift; sourceTree = "<group>"; };
 		049733931BD304C900A492E7 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		049733951BD3050700A492E7 /* CSVRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRow.swift; sourceTree = "<group>"; };
+		04FD2DE71BD412580033299C /* CSVRowObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRowObject.swift; sourceTree = "<group>"; };
+		04FD2DED1BD415F20033299C /* CSVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +97,9 @@
 				049733911BD304C300A492E7 /* CSVKit.swift */,
 				049733931BD304C900A492E7 /* CSV.swift */,
 				049733951BD3050700A492E7 /* CSVRow.swift */,
-				04093D561BD30D4B0084A10D /* CSVColumn.swift */,
 				04093D581BD30EA20084A10D /* CSVValue.swift */,
+				04FD2DE71BD412580033299C /* CSVRowObject.swift */,
+				04FD2DED1BD415F20033299C /* CSVSet.swift */,
 			);
 			path = CSVKit;
 			sourceTree = "<group>";
@@ -218,11 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04093D571BD30D4B0084A10D /* CSVColumn.swift in Sources */,
 				049733941BD304C900A492E7 /* CSV.swift in Sources */,
+				04FD2DEE1BD415F20033299C /* CSVSet.swift in Sources */,
 				049733961BD3050700A492E7 /* CSVRow.swift in Sources */,
 				04093D591BD30EA20084A10D /* CSVValue.swift in Sources */,
 				049733921BD304C300A492E7 /* CSVKit.swift in Sources */,
+				04FD2DE81BD412580033299C /* CSVRowObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,7 @@
 				04093D551BD30CA40084A10D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		049733801BD3032900A492E7 /* Build configuration list for PBXProject "CSVKit" */ = {
 			isa = XCConfigurationList;
