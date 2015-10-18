@@ -24,7 +24,12 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = s.summary
+  s.description  = <<-DESC
+                    A simple CSV parser written in Swift.
+
+                    Features a nice safety system to make it easy to use without
+                    messing around with optionals, even if a field does not exist!
+                   DESC
 
   s.homepage     = "https://github.com/jackwilsdon/CSVKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
