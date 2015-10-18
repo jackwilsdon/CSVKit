@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class CSVValue {
+public class CSVValue: CustomStringConvertible {
     private let rawValue: String?
 
     public var asString: String? { return valid ? rawValue : nil }
@@ -16,6 +16,14 @@ public class CSVValue {
     public var asBool: Bool? { return valid ? asInt == 1 : nil }
 
     public let valid: Bool
+
+    public var description: String {
+        if let value = asString {
+            return value
+        } else {
+            return "nil"
+        }
+    }
 
     public init(_ csvValue: String) {
         rawValue = csvValue
