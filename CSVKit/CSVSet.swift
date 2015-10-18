@@ -23,11 +23,13 @@ public class CSVSet {
         self.csvs = csvs
     }
 
-    public func addCSV(name: String, csv: CSV) {
-        csvs[name] = csv
-    }
-
     public subscript(name: String) -> CSV? {
-        return csvs[name]
+        get {
+            return csvs[name]
+        }
+
+        set(value) {
+            csvs[name] = value
+        }
     }
 }
