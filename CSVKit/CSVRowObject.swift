@@ -6,7 +6,7 @@
 import Foundation
 
 public class CSVRowObject: CSVRow {
-    public required init(_ row: CSVRow) {
+    public required init?(_ row: CSVRow) {
         if row.valid {
             super.init(row.row!)
         } else {
