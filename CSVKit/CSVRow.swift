@@ -8,7 +8,11 @@
 
 import Foundation
 
-public class CSVRow {
+public func ==(lhs: CSVRow, rhs: CSVRow) -> Bool {
+    return (lhs.row == nil && rhs.row == nil) || lhs.row! == rhs.row!
+}
+
+public class CSVRow: Equatable {
     public let headings: [String]?
     public let values: [CSVValue]?
     public let row: [String: CSVValue]?
