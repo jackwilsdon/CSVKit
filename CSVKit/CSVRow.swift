@@ -30,7 +30,7 @@ public class CSVRow: Equatable {
         valid = false
     }
 
-    public func asRowObject<T: CSVRowObject>(type: T.Type) -> T {
+    public func asRowObject<T: CSVRowObject>(type: T.Type) -> T? {
         return T(self)
     }
 
