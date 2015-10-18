@@ -8,10 +8,12 @@
 
 import Foundation
 
-public class CSV {
+public class CSV: SequenceType {
+    public typealias Generator = AnyGenerator<CSVRow>
+
     private(set) public var headings = [String]()
-    private var columns = [String: [String]]()
-    public var count: Int { return 0 }
+    private var rows = [[String: String]]()
+    public var count: Int { return rows.count }
 
     public init?(_ lines: [String], separator: Character = ",") {
         for (index, line) in lines.enumerate() {
@@ -19,22 +21,15 @@ public class CSV {
 
             if index == 0 {
                 headings.appendContentsOf(values)
-
-                for value in values {
-                    print(columns[value])
-                    columns[value] = [String]()
-                }
             } else {
                 if values.count != headings.count {
                     return nil
                 }
 
+                var row = [String: String]()
+
                 for (heading, value) in zip(headings, values) {
-                    if var column = columns[heading] {
-                        column.append(value)
-                    } else {
-                        return nil
-                    }
+                    row[heading] = value
                 }
             }
         }
@@ -45,41 +40,36 @@ public class CSV {
     }
 
     public func find(field: String, value: String) -> CSVRow {
-        var index: Int?
-
-        for (_, column) in columns {
-            if let unwrappedIndex = column.indexOf(value) {
-                index = unwrappedIndex
-
-                break
+        for (index, row) in rows.enumerate() {
+            if row.values.contains(value) {
+                return self[index]
             }
-        }
-
-        if let unwrappedIndex = index {
-            return self[unwrappedIndex]
         }
 
         return CSVRow()
     }
 
-    public subscript(index: Int) -> CSVRow {
-        var row = [String: CSVValue]()
-        var valid = true
+    public func generate() -> Generator {
+        var index = 0
 
-        for heading in headings {
-            if let column = columns[heading] {
-                if (column.count >= index) {
-                    valid = false
-                }
-
-                row[heading] = CSVValue(column[index])
-            } else {
-                valid = false
+        return anyGenerator {
+            if index >= self.count {
+                return nil
             }
+
+            return self[index++]
+        }
+    }
+
+    public subscript(index: Int) -> CSVRow {
+        if index < 0 || index >= rows.count {
+            return CSVRow()
         }
 
-        if !valid {
-            return CSVRow()
+        var row = [String: CSVValue]()
+
+        for (heading, value) in rows[index] {
+            row[heading] = CSVValue(value)
         }
 
         return CSVRow(row)
