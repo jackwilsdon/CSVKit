@@ -31,6 +31,8 @@ public class CSV: SequenceType {
                 for (heading, value) in zip(headings, values) {
                     row[heading] = value
                 }
+
+                rows.append(row)
             }
         }
     }
