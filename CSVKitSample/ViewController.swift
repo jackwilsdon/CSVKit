@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  CSVKitSample
 //
-//  Created by Jack Wilsdon on 18/10/2015.
-//  Copyright © 2015 Jack Wilsdon. All rights reserved.
-//
 
 import UIKit
 import CSVKit
