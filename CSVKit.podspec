@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CSVKit"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "A simple CSV parser written in Swift."
 
   s.description  = <<-DESC
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/jackwilsdon/CSVKit.git", :tag => "0.2.0" }
+  s.source       = { :git => "https://github.com/jackwilsdon/CSVKit.git", :tag => "0.2.1" }
   s.source_files  = "CSVKit", "CSVKit/**/*.{h,swift}"
 end
