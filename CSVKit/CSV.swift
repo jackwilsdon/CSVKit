@@ -50,6 +50,10 @@ public class CSV: SequenceType {
         return CSVRow()
     }
 
+    public func rowsAsRowObjects<T: CSVRowObject>(type: T.Type) -> [T?] {
+        return rows.map({ T($0) })
+    }
+
     public func generate() -> Generator {
         var index = 0
 
