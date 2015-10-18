@@ -34,6 +34,24 @@ public class CSVRow: Equatable {
         return T(self)
     }
 
+    public func containsHeading(heading: String) -> Bool {
+        return containsHeadings(heading)
+    }
+
+    public func containsHeadings(headings: String...) -> Bool {
+        if !valid {
+            return false
+        }
+
+        for heading in headings {
+            if !self.headings!.contains(heading) {
+                return false
+            }
+        }
+
+        return true
+    }
+
     public subscript(index: String) -> CSVValue {
         if !valid {
             return CSVValue()
