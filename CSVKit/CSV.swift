@@ -12,7 +12,7 @@ public class CSV: SequenceType {
     public typealias Generator = AnyGenerator<CSVRow>
 
     private(set) public var headings = [String]()
-    private(set) public var rows = [[String: CSVValue]]()
+    private(set) public var rows = [CSVRow]()
     public var count: Int { return rows.count }
 
     public init?(_ lines: [String], separator: Character = ",") {
@@ -32,7 +32,7 @@ public class CSV: SequenceType {
                     row[heading] = CSVValue(value)
                 }
 
-                rows.append(row)
+                rows.append(CSVRow(row))
             }
         }
     }
@@ -43,8 +43,10 @@ public class CSV: SequenceType {
 
     public func find(field: String, value: String) -> CSVRow {
         for (index, row) in rows.enumerate() {
-            if row.values.contains({ $0.asString  == value }) {
-                return self[index]
+            if let values = row.values {
+                if values.contains({ $0.asString  == value }) {
+                    return self[index]
+                }
             }
         }
 
@@ -68,6 +70,6 @@ public class CSV: SequenceType {
             return CSVRow()
         }
 
-        return CSVRow(rows[index])
+        return rows[index]
     }
 }
