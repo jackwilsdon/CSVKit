@@ -8,7 +8,11 @@
 
 import Foundation
 
-public class CSVValue: CustomStringConvertible {
+public func ==(lhs: CSVValue, rhs: CSVValue) -> Bool {
+    return lhs.rawValue == rhs.rawValue
+}
+
+public class CSVValue: CustomStringConvertible, Equatable {
     private let rawValue: String?
 
     public var asString: String? { return valid ? rawValue : nil }
@@ -50,5 +54,4 @@ public class CSVValue: CustomStringConvertible {
 
         return CSVRow()
     }
-
 }
