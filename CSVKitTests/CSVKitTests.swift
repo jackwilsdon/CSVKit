@@ -9,28 +9,35 @@
 import XCTest
 import CSVKit
 
+func parse(bundle: Bundle, forResource fileName: String, withExtension: String) -> CSV? {
+    guard let url = bundle.url(forResource: fileName, withExtension: withExtension) else {
+        XCTFail("Unable to find color data file '\(fileName)'")
+        return nil
+    }
+    let data: Data
+    do {
+        data = try Data(contentsOf: url)
+    } catch {
+        XCTFail("Reading contents of URL \(url) threw error: \(error)")
+        return nil
+    }
+    guard let string = String(data: data, encoding: .utf8) else {
+        XCTFail("Unable to convert data '\(data)' into String from '\(fileName)'")
+        return nil
+    }
+    
+    let lines = string.split(separator: "\r\n").map { String($0) }
+    return CSV(lines)
+}
+
 class CSVKitTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testParse() {
+        guard let csv = parse(bundle: Bundle(for: type(of: self)), forResource: "TestData", withExtension: "csv") else {
+            XCTFail("Unable to create CSV object")
+            return
         }
+        
+        XCTAssertEqual(csv.headings.count, 30, "Expect 30 columns")
+        XCTAssertEqual(csv.rows.count, 1866, "Expect 1866 rows")
     }
-
 }

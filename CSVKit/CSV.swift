@@ -14,7 +14,7 @@ open class CSV {
 
     public init?(_ lines: [String], separator: Character = ",") {
         for (index, line) in lines.enumerated() {
-            let values = line.split(separator: separator).map(String.init)
+            let values = line.split(separator: separator, maxSplits: Int.max, omittingEmptySubsequences: false).map(String.init)
 
             if index == 0 {
                 headings.append(contentsOf: values)

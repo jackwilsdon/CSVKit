@@ -15,6 +15,7 @@
 		049733961BD3050700A492E7 /* CSVRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733951BD3050700A492E7 /* CSVRow.swift */; };
 		04FD2DE81BD412580033299C /* CSVRowObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2DE71BD412580033299C /* CSVRowObject.swift */; };
 		04FD2DEE1BD415F20033299C /* CSVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD2DED1BD415F20033299C /* CSVSet.swift */; };
+		3CCA63CF214435240057E454 /* TestData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3CCA63CE214435240057E454 /* TestData.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		049733951BD3050700A492E7 /* CSVRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRow.swift; sourceTree = "<group>"; };
 		04FD2DE71BD412580033299C /* CSVRowObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVRowObject.swift; sourceTree = "<group>"; };
 		04FD2DED1BD415F20033299C /* CSVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVSet.swift; sourceTree = "<group>"; };
+		3CCA63CE214435240057E454 /* TestData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestData.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				04093D4D1BD30CA40084A10D /* CSVKitTests.swift */,
+				3CCA63CE214435240057E454 /* TestData.csv */,
 				04093D4F1BD30CA40084A10D /* Info.plist */,
 			);
 			path = CSVKitTests;
@@ -193,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CCA63CF214435240057E454 /* TestData.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
