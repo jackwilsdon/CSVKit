@@ -5,11 +5,7 @@
 
 import Foundation
 
-public func ==(lhs: CSVRow, rhs: CSVRow) -> Bool {
-    return (lhs.row == nil && rhs.row == nil) || lhs.row! == rhs.row!
-}
-
-public class CSVRow: Equatable {
+open class CSVRow: Equatable {
     public let headings: [String]?
     public let values: [CSVValue]?
     public let row: [String: CSVValue]?
@@ -34,11 +30,11 @@ public class CSVRow: Equatable {
         return T(self)
     }
 
-    public func containsHeading(heading: String) -> Bool {
-        return containsHeadings(heading)
+    public func contains(heading: String) -> Bool {
+        return contains(headings: heading)
     }
 
-    public func containsHeadings(headings: String...) -> Bool {
+    public func contains(headings: String...) -> Bool {
         if !valid {
             return false
         }
@@ -62,5 +58,9 @@ public class CSVRow: Equatable {
         }
 
         return CSVValue()
+    }
+    
+    public static func ==(lhs: CSVRow, rhs: CSVRow) -> Bool {
+        return (lhs.row == nil && rhs.row == nil) || lhs.row! == rhs.row!
     }
 }
