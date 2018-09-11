@@ -27,7 +27,13 @@ func parse(bundle: Bundle, forResource fileName: String, withExtension: String) 
     }
     
     let lines = string.split(separator: "\r\n").map { String($0) }
-    return CSV(lines)
+    let result = CSV(lines)
+    if result == nil {
+        XCTFail("Unable to create CSV object")
+        return nil
+    }
+    
+    return result
 }
 
 class CSVKitTests: XCTestCase {
