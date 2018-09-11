@@ -5,7 +5,7 @@
 
 import Foundation
 
-public class CSVSet {
+open class CSVSet {
     private var csvs: [String: CSV] = [String: CSV]()
 
     public init(csvsArray: [[String: CSV]]) {

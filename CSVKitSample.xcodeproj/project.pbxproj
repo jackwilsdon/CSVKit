@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04093D5B1BD311820084A10D /* CSVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04093D5A1BD311820084A10D /* CSVKit.framework */; };
 		049733A41BD30BB400A492E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733A31BD30BB400A492E7 /* AppDelegate.swift */; };
 		049733A61BD30BB400A492E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049733A51BD30BB400A492E7 /* ViewController.swift */; };
 		049733A91BD30BB400A492E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049733A71BD30BB400A492E7 /* Main.storyboard */; };
 		049733AB1BD30BB400A492E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049733AA1BD30BB400A492E7 /* Assets.xcassets */; };
 		049733AE1BD30BB400A492E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049733AC1BD30BB400A492E7 /* LaunchScreen.storyboard */; };
+		3C5D47D62143653D0004EF49 /* CSVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5D47D52143653D0004EF49 /* CSVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +24,7 @@
 		049733AA1BD30BB400A492E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049733AD1BD30BB400A492E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049733AF1BD30BB400A492E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5D47D52143653D0004EF49 /* CSVKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CSVKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04093D5B1BD311820084A10D /* CSVKit.framework in Frameworks */,
+				3C5D47D62143653D0004EF49 /* CSVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +45,7 @@
 				04093D5A1BD311820084A10D /* CSVKit.framework */,
 				049733A21BD30BB400A492E7 /* CSVKitSample */,
 				049733A11BD30BB400A492E7 /* Products */,
+				3C5D47D42143653D0004EF49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +68,14 @@
 				049733AF1BD30BB400A492E7 /* Info.plist */,
 			);
 			path = CSVKitSample;
+			sourceTree = "<group>";
+		};
+		3C5D47D42143653D0004EF49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C5D47D52143653D0004EF49 /* CSVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,11 +211,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -239,9 +249,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

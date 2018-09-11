@@ -5,11 +5,7 @@
 
 import Foundation
 
-public func ==(lhs: CSVValue, rhs: CSVValue) -> Bool {
-    return lhs.rawValue == rhs.rawValue
-}
-
-public class CSVValue: CustomStringConvertible, Equatable {
+open class CSVValue: CustomStringConvertible, Equatable {
     private let rawValue: String?
 
     public var asString: String? { return valid ? rawValue : nil }
@@ -36,7 +32,7 @@ public class CSVValue: CustomStringConvertible, Equatable {
         valid = false
     }
 
-    public func asEnum<T: RawRepresentable where T.RawValue == Int>() -> T? {
+    public func asEnum<T: RawRepresentable>() -> T? where T.RawValue == Int {
         if let intValue = asInt {
             return T(rawValue: intValue)
         }
@@ -46,9 +42,13 @@ public class CSVValue: CustomStringConvertible, Equatable {
 
     public func getRelational(key: String, csv: CSV) -> CSVRow {
         if let value = asString {
-            return csv.find(key, value: value)
+            return csv.find(field: key, value: value)
         }
 
         return CSVRow()
+    }
+    
+    public static func ==(lhs: CSVValue, rhs: CSVValue) -> Bool {
+        return lhs.rawValue == rhs.rawValue
     }
 }

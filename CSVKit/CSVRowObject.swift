@@ -5,7 +5,7 @@
 
 import Foundation
 
-public class CSVRowObject: CSVRow {
+open class CSVRowObject: CSVRow {
     public required init?(_ row: CSVRow) {
         if row.valid {
             super.init(row.row!)

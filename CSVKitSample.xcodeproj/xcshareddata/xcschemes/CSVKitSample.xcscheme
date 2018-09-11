@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0497339F1BD30BB400A492E7"
-               BuildableName = "CSVKitSample.app"
-               BlueprintName = "CSVKitSample"
-               ReferencedContainer = "container:CSVKitSample.xcodeproj">
+               BlueprintIdentifier = "049733851BD3032900A492E7"
+               BuildableName = "CSVKit.framework"
+               BlueprintName = "CSVKit"
+               ReferencedContainer = "container:CSVKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "049733851BD3032900A492E7"
-               BuildableName = "CSVKit.framework"
-               BlueprintName = "CSVKit"
-               ReferencedContainer = "container:CSVKit.xcodeproj">
+               BlueprintIdentifier = "0497339F1BD30BB400A492E7"
+               BuildableName = "CSVKitSample.app"
+               BlueprintName = "CSVKitSample"
+               ReferencedContainer = "container:CSVKitSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

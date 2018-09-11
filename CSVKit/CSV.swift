@@ -5,19 +5,19 @@
 
 import Foundation
 
-public class CSV: SequenceType {
-    public typealias Generator = AnyGenerator<CSVRow>
+open class CSV {
+    public typealias Element = CSVRow
 
     private(set) public var headings = [String]()
     private(set) public var rows = [CSVRow]()
     public var count: Int { return rows.count }
 
     public init?(_ lines: [String], separator: Character = ",") {
-        for (index, line) in lines.enumerate() {
-            let values = line.characters.split(separator).map(String.init)
+        for (index, line) in lines.enumerated() {
+            let values = line.split(separator: separator, maxSplits: Int.max, omittingEmptySubsequences: false).map(String.init)
 
             if index == 0 {
-                headings.appendContentsOf(values)
+                headings.append(contentsOf: values)
             } else {
                 if values.count != headings.count {
                     return nil
@@ -35,13 +35,15 @@ public class CSV: SequenceType {
     }
 
     public convenience init?(_ raw: String, lineSeparator: Character = "\n", separator: Character = ",") {
-        self.init(raw.characters.split(lineSeparator).map(String.init), separator: separator)
+        self.init(raw.split(separator: lineSeparator).map(String.init), separator: separator)
     }
 
     public func find(field: String, value: String) -> CSVRow {
-        for (index, row) in rows.enumerate() {
+        for (index, row) in rows.enumerated() {
             if let values = row.values {
-                if values.contains({ $0.asString  == value }) {
+                if values.contains(where: { (compare) -> Bool in
+                    return compare.asString == value
+                }) {
                     return self[index]
                 }
             }
@@ -53,23 +55,13 @@ public class CSV: SequenceType {
     public func rowsAsRowObjects<T: CSVRowObject>(type: T.Type) -> [T]? {
         let rowObjects = rows.map({ T($0) })
 
-        if rowObjects.contains({ $0 == nil }) {
+        if rowObjects.contains(where: { (value) -> Bool in
+            return value == nil
+        }) {
             return nil
         }
 
         return rowObjects.map({ $0! })
-    }
-
-    public func generate() -> Generator {
-        var index = 0
-
-        return anyGenerator {
-            if index >= self.count {
-                return nil
-            }
-
-            return self[index++]
-        }
     }
 
     public subscript(index: Int) -> CSVRow {
